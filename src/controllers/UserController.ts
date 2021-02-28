@@ -28,7 +28,7 @@ class UserController {
         // Await é utilizado devido ao retorno (promise) do método save
         await usersRepository.save(user)
 
-        return response.json(user);
+        return response.status(201).json(user);
     }
 }
 
