@@ -1,12 +1,10 @@
+import request from "supertest";
+import { app } from "../app";
 
-
-describe("First", () => {
-    it("Deve ser possível somar dois números", () => {
-        expect(2 + 2).toBe(4)
-    });
-
-    it("Deve ser possível somar dois números", () => {
-        expect(2 + 2).not.toBe(5)
-    });
-
-});
+describe("Users", () => {
+    request(app).post("/users")
+        .send({
+            email: "user@example.com",
+            name: "User Example"
+        })
+})
